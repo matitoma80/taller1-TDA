@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+// prueba mac
 public class esquema_piramidal {
     // declaro la segunda lista 
     static List<Integer>[] segunda_lista;
