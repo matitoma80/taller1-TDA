@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class recorrido_misterioso {
-    public static void main(String[] args) {
+    public String recorrido_misterioso() {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
@@ -24,19 +24,28 @@ public class recorrido_misterioso {
             secuencia[j] = sc.nextInt();
         }
 
-        ArrayList<Integer> conexiones = new ArrayList<>();
-
         //recorro la secuencia
         for (int k = 0; k <= cant_nodos; k++){
             //recorro las aristas
+            ArrayList<Integer> conexiones = new ArrayList<>();
+            boolean aparece_conexion = false;
             for (int l = 0; l <= cant_nodos-1; l++){
                 if (secuencia[k] == aristas[l][0])
                     conexiones.add(aristas[l][1]);
                 else if (secuencia[k] == aristas[l][1])
                     conexiones.add(aristas[l][0]);
-            if (conexiones.size() != 0)
-            //si tiene conexiones, me fijo que el siguiente en secuencia sea alguno de esos (si no llega a ser devuelvo NO), sino lo dejo seguir            
             }
+            if (conexiones.size() != 0 && k < cant_nodos)
+                for (int m = 0; m <= conexiones.size(); m++){
+                    if (conexiones.get(m) == secuencia[k])
+                        aparece_conexion = true;
+                }
+                if (aparece_conexion == false)
+                    return "No";
         }
+
+        return "yes";
     }
 }
+//si tiene conexiones, me fijo que el siguiente en secuencia sea alguno de esos (si no llega a ser devuelvo NO), sino lo dejo seguir
+
