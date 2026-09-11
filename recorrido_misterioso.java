@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.Queue;
 
 public class recorrido_misterioso {
-    public String recorrido_misterioso() {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int cant_nodos = sc.nextInt();
@@ -38,8 +38,11 @@ public class recorrido_misterioso {
             secuencia[j] = sc.nextInt();
         }
 
+        sc.close();
+
         if (secuencia[0] != 1) {
-            return "No";
+            System.out.println("No");
+            return;
         }
 
         //pongo posiciones
@@ -61,7 +64,8 @@ public class recorrido_misterioso {
 
             // Si el nodo que sale de la cola no coincide con la posición actual en secuencia:
             if (secuencia[idx++] != actual) {
-                return "No";
+                System.out.println("No");
+                return;
             }
 
             // Encolamos los vecinos no visitados
@@ -72,8 +76,8 @@ public class recorrido_misterioso {
                 }
             }
         }
-        return "yes";
+
+        System.out.println("Yes");
     }
 }
 //si tiene conexiones, me fijo que el siguiente en secuencia sea alguno de esos (si no llega a ser devuelvo NO), sino lo dejo seguir
-

@@ -131,11 +131,11 @@ public class TestsSiuGuarani {
 
         // Caso 2: Ciclo directo simple (a < b y b < a)
         correrCaso("Caso 2: Ciclo de 2 elementos (a < b y b < a)",
-                   2,
-                   new String[]{"ab", "aa"},
+                   3,
+                   new String[]{"a", "b", "a"},
                    false);
 
-        // Caso 3: Ciclo indirecto de 3 elementos (a < b, b < c, c < a)
+        // Caso 3: Ciclo indirecto de 3 elementos (a -> b -> c -> a)
         correrCaso("Caso 3: Ciclo indirecto (a -> b -> c -> a)",
                    3,
                    new String[]{"a", "b", "ab"}, // Aquí b < a por longitud de prefijo si difiere
